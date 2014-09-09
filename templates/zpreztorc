@@ -44,7 +44,9 @@ zstyle ':prezto:load' pmodule \
 {% if aws_default_profile %}
   'aws' \
 {% endif %}
+{% if ansible_os_family == 'Darwin' %}
   'osx' \
+{% endif %}
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
