@@ -1,4 +1,5 @@
 ansible-dotfiles
 ================
 
-Provisioning OS with dotfiles
+Ansible role for provisioning OS with dotfiles
+
