@@ -388,9 +388,10 @@ set wildignore+=*.spl
 " Backup, auto save, swap, undo, and view files.
 set wildignore+=*~,#*#,*.sw?,%*,*=
 
+{% if ansible_os_family == 'Darwin' %}
 " Mac OS X.
 set wildignore+=*.DS_Store
-
+{% endif %}
 " }
 
 " }
