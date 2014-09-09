@@ -6,35 +6,35 @@
 
 - name: "replace gitconfig"
   template:
-    src: "dotfiles/gitconfig"
+    src: "gitconfig"
     dest: "{{ home_dir }}/.gitconfig"
 
 - name: "replace hgrc"
   template:
-    src: "dotfiles/hgrc"
+    src: "hgrc"
     dest: "{{ home_dir }}/.hgrc"
 
 - name: "replace tmux.conf"
   template:
-    src: "dotfiles/tmux.conf"
+    src: "tmux.conf"
     dest: "{{ home_dir }}/.tmux.conf"
 
 - name: "replace vimrc"
   template:
-    src: "dotfiles/vimrc"
+    src: "vimrc"
     dest: "{{ home_dir }}/.vimrc"
 
 - name: "replace zpreztorc"
   template:
-    src: "dotfiles/zpreztorc"
+    src: "zpreztorc"
     dest: "{{ home_dir }}/.zpreztorc"
 
 - name: "replace zshenv"
   template:
-    src: "dotfiles/zshenv"
+    src: "zshenv"
     dest: "{{ home_dir }}/.zshenv"
 
 - name: "replace zshrc"
   template:
-    src: "dotfiles/zshrc"
+    src: "zshrc"
     dest: "{{ home_dir }}/.zshrc"
