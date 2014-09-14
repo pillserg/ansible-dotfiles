@@ -6,8 +6,8 @@
   shell: "ln -nsf {{ zprezto_project_dir }} {{ ansible_env.HOME }}/.zprezto"
 
 - name: "change shell"
-  shell: "chsh -s {{ user_shell }} `whoami`"
-  sudo: yes
+  command: "chsh -s /bin/zsh {{ ansible_env.USER}}"
+  sudo: no
 
 - name: "replace gitconfig"
   template:

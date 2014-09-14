@@ -3,5 +3,3 @@ essential_packages:
   - git
   - zsh
   - tmux
-
-user_shell: "/usr/bin/zsh"
