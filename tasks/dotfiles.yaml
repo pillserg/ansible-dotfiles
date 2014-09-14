@@ -6,7 +6,7 @@
   shell: "ln -nsf {{ zprezto_project_dir }} {{ ansible_env.HOME }}/.zprezto"
 
 - name: "change shell"
-  user: name="{{ ansible_env.USER }}" shell="{{ user_shell }}"
+  shell: "chsh -s {{ user_shell }} `whoami`"
   sudo: yes
 
 - name: "replace gitconfig"
