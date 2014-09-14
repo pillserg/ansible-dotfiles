@@ -1,3 +1,4 @@
+---
 home_dir: "{{ ansible_env.HOME }}"
 
 zprezto_project_dir: "{{ projects_dir }}/zprezto"

@@ -25,7 +25,9 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'docker' \
+{% if ansible_os_family == 'Debian' %}
   'dpkg' \
+{% endif %}
   'spectrum' \
   'utility' \
   'completion' \
@@ -46,6 +48,7 @@ zstyle ':prezto:load' pmodule \
 {% endif %}
 {% if ansible_os_family == 'Darwin' %}
   'osx' \
+  'homebrew' \
 {% endif %}
   'syntax-highlighting' \
   'history-substring-search' \
@@ -87,7 +90,11 @@ zstyle ':prezto:module:aws' aws-default-profile '{{ aws_default_profile }}'
 # Go lang
 #
 
-zstyle ':prezto:module:golang' go-root "/usr/local/Cellar/go/$(brew list go --versions | awk '{print $3;}')/libexec"
+{% if ansible_os_family == 'Darwin' %}
+zstyle ':prezto:module:golang' go-root "/usr/local/Cellar/go/$(brew list go --versions | awk '{print $2;}')/libexec"
+{% else %}
+zstyle ':prezto:module:golang' go-root "/usr/lib/go"
+{% endif %}
 zstyle ':prezto:module:golang' go-path "{{ projects_dir }}/go"
 
 #
