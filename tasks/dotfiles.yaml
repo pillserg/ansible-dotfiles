@@ -3,43 +3,43 @@
   git: repo=https://github.com/pavel-v-chernykh/prezto.git dest={{ zprezto_project_dir }}
 
 - name: "link zprezto"
-  shell: "ln -nsf {{ zprezto_project_dir }} {{ home_dir }}/.zprezto"
+  shell: "ln -nsf {{ zprezto_project_dir }} {{ ansible_env.HOME }}/.zprezto"
 
 - name: "change shell"
-  user: name="{{ username }}" shell="{{ user_shell }}"
+  user: name="{{ ansible_env.USER }}" shell="{{ user_shell }}"
   sudo: yes
 
 - name: "replace gitconfig"
   template:
     src: "gitconfig"
-    dest: "{{ home_dir }}/.gitconfig"
+    dest: "{{ ansible_env.HOME }}/.gitconfig"
 
 - name: "replace hgrc"
   template:
     src: "hgrc"
-    dest: "{{ home_dir }}/.hgrc"
+    dest: "{{ ansible_env.HOME }}/.hgrc"
 
 - name: "replace tmux.conf"
   template:
     src: "tmux.conf"
-    dest: "{{ home_dir }}/.tmux.conf"
+    dest: "{{ ansible_env.HOME }}/.tmux.conf"
 
 - name: "replace vimrc"
   template:
     src: "vimrc"
-    dest: "{{ home_dir }}/.vimrc"
+    dest: "{{ ansible_env.HOME }}/.vimrc"
 
 - name: "replace zpreztorc"
   template:
     src: "zpreztorc"
-    dest: "{{ home_dir }}/.zpreztorc"
+    dest: "{{ ansible_env.HOME }}/.zpreztorc"
 
 - name: "replace zshenv"
   template:
     src: "zshenv"
-    dest: "{{ home_dir }}/.zshenv"
+    dest: "{{ ansible_env.HOME }}/.zshenv"
 
 - name: "replace zshrc"
   template:
     src: "zshrc"
-    dest: "{{ home_dir }}/.zshrc"
+    dest: "{{ ansible_env.HOME }}/.zshrc"
