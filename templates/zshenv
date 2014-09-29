@@ -16,9 +16,9 @@ alias open='$BROWSER'
 # Set editors
 export EDITOR='vim'
 {% if ansible_os_family == 'Darwin' %}
-export VISUAL='atom'
+export VISUAL='vim'
 {% else %}
-export VISUAL='gedit'
+export VISUAL='vim'
 {% endif %}
 export PAGER='less'
 
