@@ -2,7 +2,7 @@
 - name: "clone zprezto project"
   git:
     repo: https://github.com/pavel-v-chernykh/prezto.git
-    dest: {{ zprezto_project_dir }}
+    dest: '{{ zprezto_project_dir }}'
     depth: 1
 
 - name: "link zprezto"
@@ -52,3 +52,4 @@
   template:
     src: "zshrc"
     dest: "{{ ansible_env.HOME }}/.zshrc"
+
