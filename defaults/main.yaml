@@ -1,14 +1,14 @@
 ---
-scm_github_username: ""
-aws_default_profile: ""
+dotfiles_scm_github_username: ""
+dotfiles_aws_default_profile: ""
 
-projects_dir: "{{ ansible_env.HOME }}/Projects"
+dotfiles_projects_dir: "{{ ansible_env.HOME }}/Projects"
 
-zprezto_project_dir: "{{ projects_dir }}/zprezto"
+dotfiles_zprezto_project_dir: "{{ dotfiles_projects_dir }}/zprezto"
 
-gitconfig_user_name: "{{ scm_user_name }}"
-gitconfig_user_email: "{{ scm_user_email }}"
-gitconfig_github_user: "{{ scm_github_username }}"
+dotfiles_gitconfig_user_name: "{{ dotfiles_scm_user_name }}"
+dotfiles_gitconfig_user_email: "{{ dotfiles_scm_user_email }}"
+dotfiles_gitconfig_github_user: "{{ dotfiles_scm_github_username }}"
 
-hgrc_ui_user_name: "{{ scm_user_name }}"
-hgrc_ui_user_email: "{{ scm_user_email }}"
+dotfiles_hgrc_ui_user_name: "{{ dotfiles_scm_user_name }}"
+dotfiles_hgrc_ui_user_email: "{{ dotfiles_scm_user_email }}"

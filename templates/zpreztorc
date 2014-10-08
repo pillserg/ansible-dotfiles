@@ -43,7 +43,7 @@ zstyle ':prezto:load' pmodule \
   'fasd' \
   'vagrant' \
   'node' \
-{% if aws_default_profile %}
+{% if dotfiles_aws_default_profile %}
   'aws' \
 {% endif %}
 {% if ansible_os_family == 'Darwin' %}
@@ -78,12 +78,12 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 # Set the command prefix on non-GNU systems.
 # zstyle ':prezto:module:gnu-utility' prefix 'g'
 
-{% if aws_default_profile %}
+{% if dotfiles_aws_default_profile %}
 #
 # AWS
 #
 
-zstyle ':prezto:module:aws' aws-default-profile '{{ aws_default_profile }}'
+zstyle ':prezto:module:aws' aws-default-profile '{{ dotfiles_aws_default_profile }}'
 
 {% endif %}
 #
@@ -95,7 +95,7 @@ zstyle ':prezto:module:golang' go-root "/usr/local/Cellar/go/$(brew list go --ve
 {% else %}
 zstyle ':prezto:module:golang' go-root "/usr/lib/go"
 {% endif %}
-zstyle ':prezto:module:golang' go-path "{{ projects_dir }}/go"
+zstyle ':prezto:module:golang' go-path "{{ dotfiles_projects_dir }}/go"
 
 #
 # History Substring Search

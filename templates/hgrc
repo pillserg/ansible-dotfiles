@@ -1,5 +1,5 @@
 [ui]
-username = {{ hgrc_ui_user_name }} <{{ hgrc_ui_user_email }}>
+username = {{ dotfiles_hgrc_ui_user_name }} <{{ dotfiles_hgrc_ui_user_email }}>
 editor = vim
 merge = Kaleidoscope
 
@@ -15,7 +15,7 @@ g = graft
 i = in
 kd = ksdiff
 l = log
-lm = log -u "{{ hgrc_ui_user_name }}"
+lm = log -u "{{ dotfiles_hgrc_ui_user_name }}"
 f = fetch
 h = heads
 m = merge

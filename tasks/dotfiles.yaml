@@ -2,11 +2,11 @@
 - name: "clone zprezto project"
   git:
     repo: https://github.com/pavel-v-chernykh/prezto.git
-    dest: '{{ zprezto_project_dir }}'
+    dest: '{{ dotfiles_zprezto_project_dir }}'
     depth: 1
 
 - name: "link zprezto"
-  shell: "ln -nsf {{ zprezto_project_dir }} {{ ansible_env.HOME }}/.zprezto"
+  shell: "ln -nsf {{ dotfiles_zprezto_project_dir }} {{ ansible_env.HOME }}/.zprezto"
 
 - name: "change shell"
   command: "chsh -s /bin/zsh {{ ansible_env.USER}}"

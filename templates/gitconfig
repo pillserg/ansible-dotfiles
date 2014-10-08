@@ -1,6 +1,6 @@
 [user]
-	name = {{ gitconfig_user_name }}
-	email = {{ gitconfig_user_email }}
+	name = {{ dotfiles_gitconfig_user_name }}
+	email = {{ dotfiles_gitconfig_user_email }}
 [color]
 	ui = true
 [diff]
@@ -56,9 +56,9 @@
 	tool = Kaleidoscope
 [web]
 	browser = google-chrome
-{% if gitconfig_github_user %}
+{% if dotfiles_gitconfig_github_user %}
 [github]
-	user = {{ gitconfig_github_user }}
+	user = {{ dotfiles_gitconfig_github_user }}
 {% endif %}
 [core]
 	editor = vim
