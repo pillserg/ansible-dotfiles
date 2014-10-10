@@ -1,3 +1,5 @@
 ---
-- include: "packages.yaml"
+- include: "tools.yaml"
+  tags: [dotfiles, dotfiles-tools]
 - include: "dotfiles.yaml"
+  tags: [dotfiles, dotfiles-dotfiles]
