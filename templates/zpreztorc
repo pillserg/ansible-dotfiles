@@ -32,7 +32,9 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'git' \
+{% if dotfiles_go_version %}
   'golang' \
+{% endif %}
   'mercurial' \
   'archive' \
   'rsync' \
@@ -89,14 +91,14 @@ zstyle ':prezto:module:aws' aws-default-profile '{{ dotfiles_aws_default_profile
 #
 # Go lang
 #
-
+{% if dotfiles_go_version %}
 {% if ansible_os_family == 'Darwin' %}
-zstyle ':prezto:module:golang' go-root "/usr/local/Cellar/go/$(brew list go --versions | awk '{print $2;}')/libexec"
+zstyle ':prezto:module:golang' go-root "/usr/local/Cellar/go/{{ dotfiles_go_version }}/libexec"
 {% else %}
 zstyle ':prezto:module:golang' go-root "/usr/lib/go"
 {% endif %}
 zstyle ':prezto:module:golang' go-path "{{ dotfiles_projects_dir }}/go"
-
+{% endif %}
 #
 # History Substring Search
 #

@@ -5,18 +5,9 @@
     dest: '{{ dotfiles_zprezto_project_dir }}'
     depth: 1
 
-- name: "link zprezto"
-  shell: "ln -nsf {{ dotfiles_zprezto_project_dir }} {{ ansible_env.HOME }}/.zprezto"
-
 - name: "change shell"
   command: "chsh -s /bin/zsh {{ ansible_env.USER}}"
   sudo: yes
-  when: ansible_os_family != "Darwin"
-
-- name: "change shell"
-  command: "chsh -s /bin/zsh {{ ansible_env.USER}}"
-  sudo: no
-  when: ansible_os_family == "Darwin"
 
 - name: "replace gitconfig"
   template:
@@ -33,11 +24,6 @@
     src: "tmux.conf"
     dest: "{{ ansible_env.HOME }}/.tmux.conf"
 
-- name: "replace vimrc"
-  template:
-    src: "vimrc"
-    dest: "{{ ansible_env.HOME }}/.vimrc"
-
 - name: "replace zpreztorc"
   template:
     src: "zpreztorc"
@@ -52,4 +38,3 @@
   template:
     src: "zshrc"
     dest: "{{ ansible_env.HOME }}/.zshrc"
-

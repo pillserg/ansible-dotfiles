@@ -1,12 +1,10 @@
 ---
-- name: Read the family variables
-  include_vars: "{{ ansible_os_family }}.yaml"
-
 - name: Make sure the packages are installed (Debian)
   apt:
     pkg: "{{ item }}"
     state: present
-  with_items: essential_packages
+    update_cache: yes
+  with_items: dotfiles_essential_packages
   when: ansible_os_family == "Debian"
   sudo: yes
 
@@ -14,5 +12,6 @@
   homebrew:
     pkg: "{{ item }}"
     state: present
-  with_items: essential_packages
+    update_homebrew: yes
+  with_items: dotfiles_essential_packages
   when: ansible_os_family == "Darwin"
