@@ -24,10 +24,25 @@
     src: "tmux.conf"
     dest: "{{ ansible_env.HOME }}/.tmux.conf"
 
+- name: "replace zlogin"
+  template:
+    src: "zlogin"
+    dest: "{{ ansible_env.HOME }}/.zlogin"
+
+- name: "replace zlogout"
+  template:
+    src: "zlogout"
+    dest: "{{ ansible_env.HOME }}/.zlogout"
+
 - name: "replace zpreztorc"
   template:
     src: "zpreztorc"
     dest: "{{ ansible_env.HOME }}/.zpreztorc"
+
+- name: "replace zprofile"
+  template:
+    src: "zprofile"
+    dest: "{{ ansible_env.HOME }}/.zprofile"
 
 - name: "replace zshenv"
   template:
