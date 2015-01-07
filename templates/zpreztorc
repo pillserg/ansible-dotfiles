@@ -95,10 +95,10 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 zstyle ':prezto:module:aws' aws-default-profile '{{ dotfiles_aws_default_profile }}'
 
 {% endif %}
+{% if dotfiles_go_version %}
 #
 # Go lang
 #
-{% if dotfiles_go_version %}
 {% if ansible_os_family == 'Darwin' %}
 zstyle ':prezto:module:golang' go-root "/usr/local/Cellar/go/{{ dotfiles_go_version }}/libexec"
 {% else %}
