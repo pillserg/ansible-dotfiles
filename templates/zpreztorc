@@ -42,7 +42,6 @@ zstyle ':prezto:load' pmodule \
 {% if dotfiles_go_version %}
   'golang' \
 {% endif %}
-  'mercurial' \
   'archive' \
   'rsync' \
   'haskell' \
